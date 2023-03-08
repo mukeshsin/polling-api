@@ -74,6 +74,15 @@ export default {
     },
     methods: {
         formSubmit() {
+
+            axios
+                .post("https://pollapi.innotechteam.in/user/register", this.signupData)
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log(error.response.data);
+                });
             // Firstname validation
             if (this.signupData.firstName.length < 4) {
                 this.firstNameError = " First name must be contain 4 character";
@@ -93,7 +102,7 @@ export default {
                 /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
             if (!passwordReg.test(this.signupData.password)) {
                 this.passwordError =
-                    "Password must contain at least 8 characters and include at least one uppercase letter, one lowercase letter, one number, and one special character";
+                    "Password must contain at least 8 characters ";
             } else {
                 this.passwordError = "";
             }
@@ -113,26 +122,6 @@ export default {
                 this.roleIdError = "";
             }
 
-            // Form submission
-            if (
-                this.firstNameError === "" &&
-                this.lastNameError === "" &&
-                this.passwordError === "" &&
-                this.emailError === "" &&
-                this.roleIdError === ""
-            ) {
-                axios
-                    .post("https://api.example.com/signup", this.signupData)
-                    .then((response) => {
-                        console.log(response.data);
-                        this.formSubmitted = true;
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            } else {
-                this.formSubmitted = true;
-            }
         },
     },
 };

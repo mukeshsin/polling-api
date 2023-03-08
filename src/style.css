@@ -97,6 +97,7 @@ input {
   display: flex;
 }
 
+/* For mobile views */
 @media only screen and (max-width: 600px) {
   .formWrapper {
     width: 85%;
@@ -119,6 +120,55 @@ input {
   input {
     margin-left: 3%;
 
+  }
+
+  .wrap {
+    margin-left: 0;
+  }
+
+  input,
+  select {
+    width: 90%;
+  }
+
+  .error {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+
+  .formCheck label {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .submitBtn {
+    width: 80%;
+    margin-right: 0;
+  }
+}
+
+/* For tablets */
+@media only screen and (max-width: 1024px) {
+  .formWrapper {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .head {
+    font-size: 24px;
+    margin-right: 0;
+  }
+
+  .headPara {
+    font-size: 16px;
+  }
+
+  .formLabel {
+    margin-left: 8px;
+  }
+
+  input {
+    margin-left: 3%;
   }
 
   .wrap {
