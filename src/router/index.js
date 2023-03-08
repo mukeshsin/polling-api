@@ -6,7 +6,7 @@ import logPage from  '../views/loginView.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: HomeView
   },

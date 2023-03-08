@@ -51,6 +51,8 @@
 
 <script>
 import axios from "axios";
+import router from "@/router";
+
 
 export default {
     name: "signupCard",
@@ -79,6 +81,7 @@ export default {
                 .post("https://pollapi.innotechteam.in/user/register", this.signupData)
                 .then((response) => {
                     console.log(response.data);
+                     router.push("/loginCard"); // redirect to login page
                 })
                 .catch((error) => {
                     console.log(error.response.data);
